@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# Comprehensive Visualization Report (Bar, Pie, Box, Scatter)
+# Comprehensive Visualization Report (Bar, Pie, Box, Density, Scatter)
 # -----------------------------------------------------------
 
 library(readr)
