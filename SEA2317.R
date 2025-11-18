@@ -83,3 +83,16 @@ pie(region_confirmed$total,
                    round(region_confirmed$total / sum(region_confirmed$total)*100, 1), "%)"),
     main = "Share of Total Confirmed Cases by Region",
     col = rainbow(nrow(region_confirmed)))
+
+# -----------------------------------------------------------
+# 5. BOX PLOT — Deaths by WHO Region
+# -----------------------------------------------------------
+if ("who_region" %in% names(df)) {
+  print(
+    ggplot(df, aes(x = who_region, y = deaths)) +
+      geom_boxplot(fill = "orange") +
+      scale_y_log10(labels = comma) +
+      labs(title = "Deaths by WHO Region (log scale)",
+           x = "WHO Region", y = "Deaths")
+  )
+}
