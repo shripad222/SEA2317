@@ -96,3 +96,13 @@ if ("who_region" %in% names(df)) {
            x = "WHO Region", y = "Deaths")
   )
 }
+
+# -----------------------------------------------------------
+# 6. HISTOGRAM — CFR Distribution
+# -----------------------------------------------------------
+print(
+  ggplot(df %>% filter(cfr < 1), aes(x = cfr)) +
+    geom_histogram(bins = 40, fill = "purple", alpha = 0.7) +
+    labs(title = "CFR Distribution (<= 100%)",
+         x = "Case Fatality Rate", y = "Countries")
+)
