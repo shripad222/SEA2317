@@ -108,7 +108,7 @@ print(
 )
 
 # -----------------------------------------------------------
-# 8. DENSITY PLOT — Recovery Rate
+# 7. DENSITY PLOT — Recovery Rate
 # -----------------------------------------------------------
 print(
   ggplot(df, aes(x = recovery_rate)) +
@@ -116,3 +116,4 @@ print(
     labs(title = "Density Plot of Recovery Rate",
          x = "Recovery Rate", y = "Density")
 )
+
