@@ -106,3 +106,13 @@ print(
     labs(title = "CFR Distribution (<= 100%)",
          x = "Case Fatality Rate", y = "Countries")
 )
+
+# -----------------------------------------------------------
+# 8. DENSITY PLOT — Recovery Rate
+# -----------------------------------------------------------
+print(
+  ggplot(df, aes(x = recovery_rate)) +
+    geom_density(fill = "green", alpha = 0.5) +
+    labs(title = "Density Plot of Recovery Rate",
+         x = "Recovery Rate", y = "Density")
+)
