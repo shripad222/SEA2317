@@ -62,3 +62,24 @@ print(
     labs(title = "Top 10 Countries by Deaths",
          x = "Country", y = "Deaths")
 )
+
+# -----------------------------------------------------------
+# 3. PIE CHART — WHO Region Distribution
+# -----------------------------------------------------------
+region_counts <- df %>% group_by(who_region) %>% summarise(n = n())
+
+pie(region_counts$n,
+    labels = paste(region_counts$who_region, " (", region_counts$n, ")"),
+    main = "Number of Countries by WHO Region",
+    col = rainbow(nrow(region_counts)))
+
+# -----------------------------------------------------------
+# 4. PIE CHART — Share of Confirmed Cases by WHO Region
+# -----------------------------------------------------------
+region_confirmed <- df %>% group_by(who_region) %>% summarise(total = sum(confirmed))
+
+pie(region_confirmed$total,
+    labels = paste(region_confirmed$who_region, " (",
+                   round(region_confirmed$total / sum(region_confirmed$total)*100, 1), "%)"),
+    main = "Share of Total Confirmed Cases by Region",
+    col = rainbow(nrow(region_confirmed)))
