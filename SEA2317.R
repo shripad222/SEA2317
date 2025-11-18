@@ -113,7 +113,7 @@ print(
 )
 
 # -----------------------------------------------------------
-# 9. SCATTER PLOT — Confirmed vs Deaths
+# 8. SCATTER PLOT — Confirmed vs Deaths
 # -----------------------------------------------------------
 print(
   ggplot(df, aes(x = confirmed, y = deaths)) +
@@ -125,7 +125,7 @@ print(
 )
 
 # -----------------------------------------------------------
-# 10. SCATTER — Confirmed vs Recovery Rate
+# 9. SCATTER — Confirmed vs Recovery Rate
 # -----------------------------------------------------------
 print(
   ggplot(df, aes(x = confirmed, y = recovery_rate)) +
@@ -134,4 +134,5 @@ print(
     labs(title = "Recovery Rate vs Confirmed Cases",
          x = "Confirmed Cases", y = "Recovery Rate")
 )
+
 
