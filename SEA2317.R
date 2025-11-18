@@ -117,3 +117,25 @@ print(
          x = "Recovery Rate", y = "Density")
 )
 
+# -----------------------------------------------------------
+# 9. SCATTER PLOT — Confirmed vs Deaths
+# -----------------------------------------------------------
+print(
+  ggplot(df, aes(x = confirmed, y = deaths)) +
+    geom_point(alpha = 0.6, color = "black") +
+    scale_x_log10(labels = comma) +
+    scale_y_log10(labels = comma) +
+    labs(title = "Scatter Plot: Confirmed vs Deaths (log-log)",
+         x = "Confirmed", y = "Deaths")
+)
+
+# -----------------------------------------------------------
+# 10. SCATTER — Confirmed vs Recovery Rate
+# -----------------------------------------------------------
+print(
+  ggplot(df, aes(x = confirmed, y = recovery_rate)) +
+    geom_point(alpha = 0.6, color = "blue") +
+    scale_x_log10(labels = comma) +
+    labs(title = "Recovery Rate vs Confirmed Cases",
+         x = "Confirmed Cases", y = "Recovery Rate")
+)
