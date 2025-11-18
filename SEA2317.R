@@ -36,3 +36,29 @@ df <- df %>%
 pdf("complete_visualization_report.pdf", width = 11, height = 8.5)
 
 theme_set(theme_minimal(base_size = 12))
+
+# -----------------------------------------------------------
+# 1. BAR CHART — Top 10 Countries by Confirmed
+# -----------------------------------------------------------
+top_confirmed <- df %>% arrange(desc(confirmed)) %>% slice_head(n = 10)
+
+print(
+  ggplot(top_confirmed, aes(x = reorder(country, confirmed), y = confirmed)) +
+    geom_col(fill = "steelblue") +
+    coord_flip() +
+    labs(title = "Top 10 Countries by Confirmed Cases",
+         x = "Country", y = "Confirmed")
+)
+
+# -----------------------------------------------------------
+# 2. BAR CHART — Top 10 Countries by Deaths
+# -----------------------------------------------------------
+top_deaths <- df %>% arrange(desc(deaths)) %>% slice_head(n = 10)
+
+print(
+  ggplot(top_deaths, aes(x = reorder(country, deaths), y = deaths)) +
+    geom_col(fill = "firebrick") +
+    coord_flip() +
+    labs(title = "Top 10 Countries by Deaths",
+         x = "Country", y = "Deaths")
+)
