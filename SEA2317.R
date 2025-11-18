@@ -32,11 +32,6 @@ df <- df %>%
     recovery_rate = ifelse(confirmed > 0, recovered / confirmed, NA)
   )
 
-# Output PDF
-pdf("complete_visualization_report.pdf", width = 11, height = 8.5)
-
-theme_set(theme_minimal(base_size = 12))
-
 # -----------------------------------------------------------
 # 1. BAR CHART — Top 10 Countries by Confirmed
 # -----------------------------------------------------------
@@ -139,3 +134,4 @@ print(
     labs(title = "Recovery Rate vs Confirmed Cases",
          x = "Confirmed Cases", y = "Recovery Rate")
 )
+
